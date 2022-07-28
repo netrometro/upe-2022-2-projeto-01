@@ -15,6 +15,6 @@ app.use((req, res) => {
   res.status(404).end('Pagina nao encontrada!')
 })
 
-app.listen(3333, () => {
+app.listen(process.env.PORT || 3333, () => {
   console.log('HTTP server running!');
 });
