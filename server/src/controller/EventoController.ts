@@ -20,4 +20,12 @@ EventoController.delete('/eventos/:id', (req, res) => {
     res.send(`Apaga o item específico ${id}`)
 })
 
+//Acessar evento por tag
+EventoController.get('/evento', (req, res) => {
+    const { tag } = req.query
+    if(tag) {
+        res.send(`Acessando evento com tag ${tag}`)
+    }
+} )
+
 export default EventoController
