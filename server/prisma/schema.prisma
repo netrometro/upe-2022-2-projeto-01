@@ -9,10 +9,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Usuario {
   id Int @id @default(autoincrement())
   email String @unique
-  nome String 
+  nome String
+  eventos Evento[]
+}
+
+model Evento {
+  id Int @id @default(autoincrement())
+  titulo String
+  descricao String
+  usuario Usuario @relation(fields: [usuarioId], references: id)
+  usuarioId Int
 }
 
 
