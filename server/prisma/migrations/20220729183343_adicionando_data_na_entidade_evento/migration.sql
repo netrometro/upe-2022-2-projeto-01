@@ -5,4 +5,4 @@
 
 */
 -- AlterTable
-ALTER TABLE "Evento" ADD COLUMN     "data" TEXT NOT NULL;
+ALTER TABLE "Evento" ADD COLUMN     "dataEvento" TEXT NOT NULL;
