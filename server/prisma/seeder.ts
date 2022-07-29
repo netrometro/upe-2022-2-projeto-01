@@ -9,6 +9,7 @@ const main =async () => {
             nome: "Gabriel",
             eventos: {
                 create: {
+                    tag: "fig2022",
                     titulo: "Evento FIG",
                     descricao: "Todo mundo ir ver Filipe Ret",
                     dataEvento: "2020-01-01"

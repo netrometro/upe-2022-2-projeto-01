@@ -1,10 +1,10 @@
 import express from 'express'
-import { createEvento, findAllEventos } from '../services/EventoService'
+import { createEvento, findAllEventos, findEventoByTag } from '../services/EventoService'
 
 const EventoController = express.Router()
 
 EventoController.post('/evento', async (req, res) => {
-    createEvento(req, res);
+    createEvento(req, res)
 })
 
 EventoController.get('/eventos', async (req, res) => {
@@ -24,12 +24,7 @@ EventoController.delete('/eventos/:id', (req, res) => {
 })
 
 EventoController.get('/evento', (req, res) => {
-    const { tag } = req.query
-    if(tag) {
-       return res.json(`Acessando evento com tag ${tag}`)
-    }
-    
-    return res.json('Informe a tag do evento no cabecalho, ex: /evento?tag=ja1Fg')
+    findEventoByTag(req, res)
 } )
 
 export default EventoController
