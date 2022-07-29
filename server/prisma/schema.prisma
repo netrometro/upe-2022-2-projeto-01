@@ -20,6 +20,7 @@ model Evento {
   id Int @id @default(autoincrement())
   titulo String
   descricao String
+  data String
   usuario Usuario @relation(fields: [usuarioId], references: id)
   usuarioId Int
 }
