@@ -2,7 +2,9 @@ import express from 'express'
 
 const EventoController = express.Router()
 
-//Adicionar rota para criar evento
+EventoController.post('/evento', (req, res) => {
+
+})
 
 EventoController.get('/eventos', (req, res) => {
     res.send("Listar todos os eventos.")
@@ -20,7 +22,6 @@ EventoController.delete('/eventos/:id', (req, res) => {
     res.send(`Apaga o item específico ${id}`)
 })
 
-//Acessar evento por tag
 EventoController.get('/evento', (req, res) => {
     const { tag } = req.query
     if(tag) {
