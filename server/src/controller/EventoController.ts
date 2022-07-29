@@ -1,13 +1,14 @@
 import express from 'express'
+import { createEvento, findAllEventos } from '../services/EventoService'
 
 const EventoController = express.Router()
 
-EventoController.post('/evento', (req, res) => {
-
+EventoController.post('/evento', async (req, res) => {
+    createEvento(req, res);
 })
 
-EventoController.get('/eventos', (req, res) => {
-    res.send("Listar todos os eventos.")
+EventoController.get('/eventos', async (req, res) => {
+    findAllEventos(res)
 })
 
 EventoController.get('/eventos/:id', (req, res) => {
