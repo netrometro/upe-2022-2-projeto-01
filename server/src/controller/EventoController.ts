@@ -12,6 +12,7 @@ EventoController.get('/eventos', async (req, res) => {
 })
 
 EventoController.get('/eventos/:id', (req, res) => {
+    //Um usuario deve ter acesso a um evento por id
     const id: number = +req.params.id
     res.send(`Retorna o item específico ${id}`)
 })
@@ -19,6 +20,7 @@ EventoController.get('/eventos/:id', (req, res) => {
 //Adicionar rota para atualizar evento
 
 EventoController.delete('/eventos/:id', (req, res) => {
+    //Um usuario deve excluir um evento
     const id: number = +req.params.id
     res.send(`Apaga o item específico ${id}`)
 })
