@@ -20,7 +20,13 @@ export const findAllEventos = async (res: Response) => {
 }
 
 export const findEventoById = async (req: Request, res: Response) => {
-    
+    const evento = await prisma.evento.findUnique({
+        where : { 
+            id: req.body.id,
+        }
+    })
+    console.log(evento)
+    return res.json(evento)
 }
 
 export const findEventoByTag = async (req: Request, res: Response) => {

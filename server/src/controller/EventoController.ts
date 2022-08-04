@@ -12,8 +12,8 @@ EventoController.get('/eventos', async (req, res) => {
     findAllEventos(res)
 })
 
-EventoController.get('/eventos/:id', (req, res) => {
-    findEventoByTag(req, res)
+EventoController.get('/eventoById', (req, res) => {
+    findEventoById(req, res)
 })
 
 //Adicionar rota para atualizar evento
