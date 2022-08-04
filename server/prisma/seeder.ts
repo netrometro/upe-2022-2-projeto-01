@@ -6,7 +6,10 @@ const main =async () => {
     await prisma.usuario.create({
         data: {
             email: "gabriel@gmail.com",
+            senha: "123456",
             nome: "Gabriel",
+            apelido: "Gabrielzinho",
+            avatar: "https://avatars2.githubusercontent.com/u/589998?s=460&v=4",
             eventos: {
                 create: {
                     tag: "fig2022",
