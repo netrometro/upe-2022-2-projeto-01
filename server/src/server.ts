@@ -1,5 +1,6 @@
 import express from 'express';
 import EventoController from './controller/EventoController';
+import UserController from './controller/UserController';
 
 const app = express();
 
@@ -10,6 +11,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api', EventoController)
+
+app.use('/api', UserController)
 
 app.use((req, res) => {
   res.status(404).end('Pagina nao encontrada!')
