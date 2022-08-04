@@ -18,7 +18,7 @@ EventoController.get('/eventoById', (req, res) => {
 
 //Adicionar rota para atualizar evento
 
-EventoController.delete('/eventos/:id', (req, res) => {
+EventoController.delete('/eventos', (req, res) => {
     deleteEventoById(req, res)
 })
 
