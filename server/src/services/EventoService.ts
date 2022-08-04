@@ -29,6 +29,16 @@ export const findEventoById = async (req: Request, res: Response) => {
     return res.json(evento)
 }
 
+export const deleteEventoById = async (req: Request, res: Response) => {
+    const deleteEvento = await prisma.evento.delete({
+        where : {
+            id: req.body.id,
+        }
+    })
+    console.log(deleteEvento)
+    return res.json(deleteEvento)
+}
+
 export const findEventoByTag = async (req: Request, res: Response) => {
     const evento = await prisma.evento.findUnique({
         where : {

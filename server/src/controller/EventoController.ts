@@ -1,5 +1,5 @@
 import express from 'express'
-import { createEvento, findAllEventos, findEventoByTag, findEventoById }
+import { createEvento, findAllEventos, findEventoByTag, findEventoById, deleteEventoById }
     from '../services/EventoService'
 
 const EventoController = express.Router()
@@ -19,12 +19,10 @@ EventoController.get('/eventoById', (req, res) => {
 //Adicionar rota para atualizar evento
 
 EventoController.delete('/eventos/:id', (req, res) => {
-    //Um usuario deve excluir um evento
-    const id: number = +req.params.id
-    res.send(`Apaga o item específico ${id}`)
+    deleteEventoById(req, res)
 })
 
-EventoController.get('/evento', (req, res) => {
+EventoController.get('/eventoByTag', (req, res) => {
     findEventoByTag(req, res)
 } )
 
