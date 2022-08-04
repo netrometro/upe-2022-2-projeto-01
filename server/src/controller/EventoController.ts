@@ -1,5 +1,6 @@
 import express from 'express'
-import { createEvento, findAllEventos, findEventoByTag } from '../services/EventoService'
+import { createEvento, findAllEventos, findEventoByTag, findEventoById }
+    from '../services/EventoService'
 
 const EventoController = express.Router()
 
@@ -12,9 +13,7 @@ EventoController.get('/eventos', async (req, res) => {
 })
 
 EventoController.get('/eventos/:id', (req, res) => {
-    //Um usuario deve ter acesso a um evento por id
-    const id: number = +req.params.id
-    res.send(`Retorna o item específico ${id}`)
+    findEventoByTag(req, res)
 })
 
 //Adicionar rota para atualizar evento
