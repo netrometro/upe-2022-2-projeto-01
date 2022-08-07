@@ -24,6 +24,22 @@ export const userRegister = async (req:Request, res: Response) => {
     }
 }
 
+export const updateUser = async (req: Request, res: Response) => {
+    delete req.body.senha
+    delete req.body.email
+    const updateUser = await prisma.usuario.update({
+        where: {
+          id: req.body.id
+        },
+        data: {
+            ...req.body
+        },
+      })
+    console.log(updateUser)
+    return res.json(updateUser)
+}
+
+
 export const findUserByEmail = async (req:Request, res: Response) => {
     const usuario = await prisma.usuario.findUnique({
         where: {

@@ -1,5 +1,5 @@
 import express from 'express'
-import {deleteUserById, findUserByEmail, userRegister} from '../services/UserService' 
+import {deleteUserById, findUserByEmail, updateUser, userRegister} from '../services/UserService' 
 
 const UserController = express.Router();
 
@@ -9,7 +9,11 @@ UserController.post('/register', async (req, res) => {
 
 export default UserController;
 
-UserController.get('/list', async (req, res) => {
+UserController.put('/update', async (req, res) => {
+    updateUser(req, res)
+})
+
+UserController.post('/list', async (req, res) => {
     findUserByEmail(req, res)
 } )
 
