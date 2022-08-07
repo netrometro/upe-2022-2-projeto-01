@@ -1,5 +1,5 @@
 import express from 'express'
-import {userRegister} from '../services/UserService' 
+import {deleteUserById, userRegister} from '../services/UserService' 
 
 const UserController = express.Router();
 
@@ -8,3 +8,7 @@ UserController.post('/register', async (req, res) => {
 })
 
 export default UserController;
+
+UserController.delete('/delete', async (req, res) => {
+    deleteUserById(req, res)
+})
