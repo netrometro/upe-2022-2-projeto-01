@@ -24,3 +24,12 @@ export const userRegister = async (req:Request, res: Response) => {
     }
 }
 
+export const deleteUserById = async (req:Request, res: Response) => {
+    const deleteUser = await prisma.usuario.delete({
+        where: {
+            id: req.body.id,
+        }
+    })
+    return res.json(deleteUser)
+}
+
