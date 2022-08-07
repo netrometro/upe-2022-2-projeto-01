@@ -13,6 +13,19 @@ export const createEvento = async (req: Request, res: Response) => {
     return res.json(result)
 }
 
+export const udpateEvento = async(req : Request, res: Response) => {
+    const { tag, cor, titulo, descricao, dataEvento } = req.body
+    const result = await prisma.evento.update({
+        where: { 
+            id: +req.params.id
+         },
+        data: {
+            ...req.body
+        }
+    })
+    return res.json(result)
+}
+
 export const findAllEventos = async (res: Response) => {
     const eventos = await prisma.evento.findMany()
     
