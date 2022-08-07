@@ -13,6 +13,7 @@ const main =async () => {
             eventos: {
                 create: {
                     tag: "fig2022",
+                    cor: "#ff0000",
                     titulo: "Evento FIG",
                     descricao: "Todo mundo ir ver Filipe Ret",
                     dataEvento: "2020-01-01"

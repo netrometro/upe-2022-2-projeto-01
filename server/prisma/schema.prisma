@@ -22,6 +22,7 @@ model Usuario {
 model Evento {
   id Int @id @default(autoincrement())
   tag String @unique
+  cor String
   titulo String
   descricao String
   dataEvento String
