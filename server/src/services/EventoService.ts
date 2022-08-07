@@ -15,6 +15,13 @@ export const createEvento = async (req: Request, res: Response) => {
 
 export const findAllEventos = async (res: Response) => {
     const eventos = await prisma.evento.findMany()
+    
+    if(!eventos) {
+        return res.status(404).json({
+            message: 'Nenhum evento encontrado'
+        })
+    }
+
     console.log(eventos)
     return res.json(eventos)
 }
@@ -25,6 +32,13 @@ export const findEventoById = async (req: Request, res: Response) => {
             id: req.body.id,
         }
     })
+
+    if(!evento) {
+        return res.status(404).json({
+            message: 'Nenhum evento encontrado'
+        })
+    }
+
     console.log(evento)
     return res.json(evento)
 }
@@ -35,6 +49,13 @@ export const deleteEventoById = async (req: Request, res: Response) => {
             id: req.body.id,
         }
     })
+
+    if(!deleteEvento) {
+        return res.status(404).json({
+            message: "Evento não encontrado"
+        })
+    }
+
     console.log(deleteEvento)
     return res.json(deleteEvento)
 }
@@ -45,6 +66,13 @@ export const findEventoByTag = async (req: Request, res: Response) => {
             tag: req.body.tag
         }
     })
+
+    if(!evento) {
+        return res.status(404).json({
+            message: 'Evento não encontrado'
+        })
+    }
+
     console.log(evento)
     return res.json(evento)
 }
