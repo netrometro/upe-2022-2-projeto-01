@@ -24,12 +24,23 @@ export const userRegister = async (req:Request, res: Response) => {
     }
 }
 
+export const findUserByEmail = async (req:Request, res: Response) => {
+    const usuario = await prisma.usuario.findUnique({
+        where: {
+            email: req.body.email
+        }
+    })
+    console.log(usuario)
+    return res.json(usuario)
+}
+
 export const deleteUserById = async (req:Request, res: Response) => {
     const deleteUser = await prisma.usuario.delete({
         where: {
             id: req.body.id,
         }
     })
+    console.log(deleteUser)
     return res.json(deleteUser)
 }
 
