@@ -11,7 +11,7 @@ EventoController.get('/eventos', async (req, res) => {
     findAllEventos(res)
 })
 
-EventoController.get('/evento/:id', (req, res) => {
+EventoController.get('/eventoById', (req, res) => {
     findEventoById(req, res)
 })
 
@@ -23,7 +23,7 @@ EventoController.delete('/eventos', (req, res) => {
     deleteEventoById(req, res)
 })
 
-EventoController.get('/eventoByTag', (req, res) => {
+EventoController.get('/evento', (req, res) => {
     findEventoByTag(req, res)
 } )
 
