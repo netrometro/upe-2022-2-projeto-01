@@ -11,7 +11,7 @@ EventoController.get('/eventos', async (req, res) => {
     findAllEventos(res)
 })
 
-EventoController.get('/eventoById', (req, res) => {
+EventoController.get('/evento/:id', (req, res) => {
     findEventoById(req, res)
 })
 

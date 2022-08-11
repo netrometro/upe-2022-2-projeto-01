@@ -42,7 +42,7 @@ export const findAllEventos = async (res: Response) => {
 export const findEventoById = async (req: Request, res: Response) => {
     const evento = await prisma.evento.findUnique({
         where : { 
-            id: req.body.id,
+            id: +req.params.id,
         }
     })
 
