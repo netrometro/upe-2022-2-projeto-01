@@ -1,19 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { render } from 'react-dom';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+var iconHeight = 26;
+var iconWidth = 26;
+
+
+export default class App extends React.Component {
+
+  state = {
+    screenText: 'Aperte um botão!'
+  }
+  
+  changeText = (text) => {
+    console.log(text +'foi pressionado')
+    this.setState({
+      screenText: text
+    })
+  }
+
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <View>
+          <Text style={{fontSize:30, color:'white'}}>{this.state.screenText}</Text>
+          <StatusBar style="light" />
+
+
+
+
+        </View>
+        
+      </View>
+    );
+  }  
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#3962FF',
     alignItems: 'center',
     justifyContent: 'center',
   },
