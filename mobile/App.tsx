@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-// import Login from './src/pages/login';
+import Login from './src/pages/Login';
 import Cadastro from './src/pages/Cadastro';
 
 
@@ -10,6 +10,7 @@ export default function App() {
       <Text>Open up App.tsx to start working on your app</Text>
       <StatusBar style="auto" />
       <Cadastro/>
+      <Login/>
     </View>
   );
 }
