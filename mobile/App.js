@@ -29,25 +29,28 @@ export default class App extends React.Component {
           <StatusBar style="light" />
         </View>
         <View style={styles.NavContainer}>
-          <Pressable onPress={() => this.changeText('Eventos favoritos')} style={styles.IconComportamento}
-          android_ripple={{borderless:true, radius:50}}>
-            <Icon name="heart" height={iconHeight} width={iconWidth} color='#448aff'/>
-          </Pressable>
+          <View style={styles.NavBar}>
+            <Pressable onPress={() => this.changeText('Eventos favoritos')} style={styles.IconComportamento}
+            android_ripple={{borderless:true, radius:50}}>
+              <Icon name="heart" height={iconHeight} width={iconWidth} color='#448aff'/>
+            </Pressable>
 
-          <Pressable onPress={() => this.changeText('Eventos favoritos')} style={styles.IconComportamento}
-          android_ripple={{borderless:true, radius:50}}>
-            <Icon name="home" height={iconHeight} width={iconWidth} color='#448aff'/>
-          </Pressable>
+            <Pressable onPress={() => this.changeText('Homepage')} style={styles.IconComportamento}
+            android_ripple={{borderless:true, radius:50}}>
+              <Icon name="home" height={iconHeight} width={iconWidth} color='#448aff'/>
+            </Pressable>
 
-          <Pressable onPress={() => this.changeText('Meus eventos')} style={styles.IconComportamento}
-          android_ripple={{borderless:true, radius:50}}>
-            <Icon name="albums" height={iconHeight} width={iconWidth} color='#1e88e5'/>
-          </Pressable>
+            <Pressable onPress={() => this.changeText('Meus eventos')} style={styles.IconComportamento}
+            android_ripple={{borderless:true, radius:50}}>
+              <Icon name="albums" height={iconHeight} width={iconWidth} color='#1e88e5'/>
+            </Pressable>
 
-          <Pressable onPress={() => this.changeText('Perfil de usuario')} style={styles.IconComportamento}
-          android_ripple={{borderless:true, radius:50}}>
-            <Icon name="person" height={iconHeight} width={iconWidth} color='#1565c0'/>
-          </Pressable>
+            <Pressable onPress={() => this.changeText('Perfil de usuario')} style={styles.IconComportamento}
+            android_ripple={{borderless:true, radius:50}}>
+              <Icon name="person" height={iconHeight} width={iconWidth} color='#1565c0'/>
+            </Pressable>
+
+          </View>
 
         </View>
         
@@ -81,8 +84,5 @@ const styles = StyleSheet.create({
   IconComportamento: {
     padding: 14
   }
-
-
-
 });
 
