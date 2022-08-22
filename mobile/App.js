@@ -27,9 +27,27 @@ export default class App extends React.Component {
         <View>
           <Text style={{fontSize:30, color:'white'}}>{this.state.screenText}</Text>
           <StatusBar style="light" />
+        </View>
+        <View style={styles.NavContainer}>
+          <Pressable onPress={() => this.changeText('Eventos favoritos')} style={styles.IconComportamento}
+          android_ripple={{borderless:true, radius:50}}>
+            <Icon name="heart" height={iconHeight} width={iconWidth} color='#448aff'/>
+          </Pressable>
 
+          <Pressable onPress={() => this.changeText('Eventos favoritos')} style={styles.IconComportamento}
+          android_ripple={{borderless:true, radius:50}}>
+            <Icon name="home" height={iconHeight} width={iconWidth} color='#448aff'/>
+          </Pressable>
 
+          <Pressable onPress={() => this.changeText('Meus eventos')} style={styles.IconComportamento}
+          android_ripple={{borderless:true, radius:50}}>
+            <Icon name="albums" height={iconHeight} width={iconWidth} color='#1e88e5'/>
+          </Pressable>
 
+          <Pressable onPress={() => this.changeText('Perfil de usuario')} style={styles.IconComportamento}
+          android_ripple={{borderless:true, radius:50}}>
+            <Icon name="person" height={iconHeight} width={iconWidth} color='#1565c0'/>
+          </Pressable>
 
         </View>
         
@@ -45,4 +63,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
+  NavContainer: {
+    position:'absolute',
+    alignItems: 'center',
+    bottom: 20,
+  },
+
+  NavBar: {
+    flexDirection: 'row',
+    backgroundColor:'#eee',
+    width: '90%',
+    justifyContent: 'space-evenly',
+    borderRadius:40
+  },
+
+  IconComportamento: {
+    padding: 14
+  }
+
+
+
 });
+
