@@ -1,0 +1,11 @@
+#!/bin/sh
+# Usage: bin/detect <build-dir>
+# exec "$1"/bin/detect "$@"
+
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+# used for inline heroku buildpack
+
+echo "My Subdir buildpack"
+exit 0

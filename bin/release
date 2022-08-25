@@ -1,0 +1,18 @@
+#!/bin/sh
+# Usage: bin/release <build-dir>
+
+#### RELEASE_SCRIPT="${1}/bin/release"
+
+# The Buildpack API states that the `bin/release` script is optional.
+#if [ -f "${RELEASE_SCRIPT}" ]; then
+#    exec "${RELEASE_SCRIPT}" "$@"
+#fi
+
+
+
+
+
+#!/usr/bin/env bash
+# used for inline heroku buildpack
+
+echo "--- {}"
