@@ -10,6 +10,11 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
   }
 
   const [ ,token ] = authHeader.split(' ')
+  const publicRouts = ['/api/login', '/api/register']
+
+  if(publicRouts.includes(req.path)) {
+    return next()
+  }
 
   try {
     jwt.verify(token, "jwttoken")

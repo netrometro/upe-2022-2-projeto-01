@@ -6,22 +6,20 @@ const UserController = express.Router();
 
 UserController.post('/login', login)
 
-UserController.use(auth)
-
 UserController.post('/register', async (req, res) => {
     userRegister(req, res)
 })
 
 export default UserController;
 
-UserController.put('/update', async (req, res) => {
+UserController.put('/update', auth, async (req, res) => {
     updateUser(req, res)
 })
 
-UserController.post('/list', async (req, res) => {
+UserController.post('/list', auth, async (req, res) => {
     findUserByEmail(req, res)
 } )
 
-UserController.delete('/delete', async (req, res) => {
+UserController.delete('/delete', auth, async (req, res) => {
     deleteUserById(req, res)
 })

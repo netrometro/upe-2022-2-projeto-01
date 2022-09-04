@@ -4,29 +4,27 @@ import {auth } from '../middleware/auth'
 
 const EventoController = express.Router()
 
-EventoController.use(auth)
-
-EventoController.post('/evento', async (req, res) => {
+EventoController.post('/evento', auth, async (req, res) => {
     createEvento(req, res)
 })
 
-EventoController.get('/eventos', async (req, res) => {
+EventoController.get('/eventos', auth, async (req, res) => {
     findAllEventos(res)
 })
 
-EventoController.get('/evento/:id', (req, res) => {
+EventoController.get('/evento/:id', auth, (req, res) => {
     findEventoById(req, res)
 })
 
-EventoController.put('/evento/:id', async (req, res) => {
+EventoController.put('/evento/:id', auth, async (req, res) => {
     udpateEvento(req, res)
 })
 
-EventoController.delete('/eventos', (req, res) => {
+EventoController.delete('/eventos', auth, (req, res) => {
     deleteEventoById(req, res)
 })
 
-EventoController.get('/evento', (req, res) => {
+EventoController.get('/evento', auth, (req, res) => {
     findEventoByTag(req, res)
 } )
 
