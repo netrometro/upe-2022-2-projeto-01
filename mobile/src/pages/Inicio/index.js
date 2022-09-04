@@ -1,34 +1,71 @@
-import { Text, Button  } from '@rneui/base';
-import { StyleSheet } from 'react-native';
+import React from "react";
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity
+} from 'react-native';
 
-export const Home = () => {
-    return (
-        <>
-            <Text style={styles.title}>{"AllGenda! :)"}</Text>
-            <Button style={styles.buttonEntrar} title="Entrar" onPress={() => {alert("Logar")}} />
-            <Text style={styles.cadastrar} onPress={()=>{alert("Cadastrar")} }>Ainda não é cadastrado? Clique aqui!</Text>
-        </>
-    );
+export default function Inicio() {
+    return(
+        <View style={styles.container}>
+            
+            <View style = {styles.containerForm}>
+                <Text style={styles.title}>Allgenda🗓️</Text>
+                <Text style={styles.text}>Busque por eventos em sua região ou em qualquer lugar!</Text>
+                <Text style={styles.login}>Faça o login para começar</Text>
+            </View>
+
+            <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Acessar</Text>
+            </TouchableOpacity>
+
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
-    title: {
+    container:{
+        backgroundColor:'#38a69d',
+        flex:1,
+        justifyContent: "center",
+        alignItems: "center",        
+    },
+    containerForm:{
+        backgroundColor: '#fff',
+        borderTopLeftRadius: 25,
+        borderTopRightRadius: 25,
+        borderBottomLeftRadius: 25,
+        borderBottomRightRadius: 25,
+        padding: '5%'
+    },
+    title:{
+        alignSelf: "center",
         fontSize: 50,
         fontWeight: 'bold',
+        marginTop: 20,
+        marginBottom: 12
     },
-    buttonEntrar: {
-        padding: 10,
-        width: 190,
-        border: 1,
-        borderColor: '#000',
-        borderRadius: 10,
-        alignSelf: 'center',
+    text:{
+        fontSize: 24,
+        marginBottom: 12
     },
-    cadastrar: {
-        fontSize: 16,
-        alignSelf: 'center',
-        marginTop: 10,
-        color: '#00008B',
-        textDecorationLine: 'underline'
+    login:{
+        color:'#a1a1a1',
+        alignSelf: "center"
+    },
+    button: {
+        position: 'absolute',
+        backgroundColor: "#fff",
+        borderRadius: 50,
+        paddingVertical: 8,
+        width: '60%',
+        alignSelf: "center",
+        bottom: '15%',
+        alignItems: "center"
+    },
+    buttonText: {
+        fontSize: 18,
+        fontWeight: "bold"
     }
 })
