@@ -1,7 +1,10 @@
 import express from 'express'
 import { createEvento, findAllEventos, findEventoByTag, findEventoById, deleteEventoById, udpateEvento } from '../services/EventoService'
+import {auth } from '../middleware/auth'
 
 const EventoController = express.Router()
+
+EventoController.use(auth)
 
 EventoController.post('/evento', async (req, res) => {
     createEvento(req, res)

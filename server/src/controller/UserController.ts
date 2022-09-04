@@ -1,7 +1,12 @@
 import express from 'express'
-import {deleteUserById, findUserByEmail, updateUser, userRegister} from '../services/UserService' 
+import {deleteUserById, findUserByEmail, updateUser, userRegister, login} from '../services/UserService' 
+import { auth } from '../middleware/auth'
 
 const UserController = express.Router();
+
+UserController.post('/login', login)
+
+UserController.use(auth)
 
 UserController.post('/register', async (req, res) => {
     userRegister(req, res)
