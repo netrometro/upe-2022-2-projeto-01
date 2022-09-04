@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './src/pages/Login';
-import Cadastro from './src/pages/Cadastro';
-import { Home } from './src/pages/Home';
+import Login from './src/pages/Login/Login';
+import Cadastro from './src/pages/Cadastro/Cadastro';
+import { Home } from './src/pages/Inicio/Home';
 
 
 export default function App() {
