@@ -6,7 +6,11 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+import {useNavigation} from '@react-navigation/native'
+
 export default function Inicio() {
+    const navigation = useNavigation();
+
     return(
         <View style={styles.container}>
             
@@ -16,7 +20,10 @@ export default function Inicio() {
                 <Text style={styles.login}>Faça o login para começar</Text>
             </View>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity 
+            style={styles.button}
+            onPress={ () => navigation.navigate('Login')}
+            >
                 <Text style={styles.buttonText}>Acessar</Text>
             </TouchableOpacity>
 
@@ -26,7 +33,7 @@ export default function Inicio() {
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#38a69d',
+        backgroundColor:'#11b9f5',
         flex:1,
         justifyContent: "center",
         alignItems: "center",        
