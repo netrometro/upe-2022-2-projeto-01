@@ -52,6 +52,21 @@ export const findUserByEmail = async (req:Request, res: Response) => {
     return res.json(usuario)
 }
 
+export const findUserByApelido = async (req: Request, res: Response) => {
+    const listuser = await prisma.usuario.findMany({
+        skip: req.body.skip,
+        take: 10,
+        where: {
+          apelido: {
+            contains: req.body.apelido
+          },
+        },
+      })
+    console.log(listuser)
+    return res.json(listuser)
+
+}
+
 export const deleteUserById = async (req:Request, res: Response) => {
     const deleteUser = await prisma.usuario.delete({
         where: {
