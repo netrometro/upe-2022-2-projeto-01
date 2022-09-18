@@ -1,20 +1,20 @@
 import {Input, Button } from '@rneui/base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useState } from 'react';
+import { styles } from './styles'
 import {
     View,
     Text,
-    StyleSheet,
-    TouchableOpacity
 } from 'react-native';
 
 function Cadastro() {
-    const [email, setEmail] = useState(null)
-    const [password, setPassword] = useState(null)
-    const [passwordRepeated, setPasswordRepeated] = useState(null)
+    const [email, setEmail] = useState<string>('')
+    const [password, setPassword] = useState<string>('')
+    const [passwordRepeated, setPasswordRepeated] = useState<string>('')
     
-    const cadastrar = () => {
-        console.log("cadastrou")
+    function handleCreateUser() {
+        console.log(email)
+        console.log(password)
     }
 
     return (
@@ -51,34 +51,12 @@ function Cadastro() {
                         />
                     }
                     title="Cadastrar"
-                    onPress={() => cadastrar()}
+                    onPress={() => handleCreateUser()}
                 />
             </View>
         </View>
 
     )    
 }
-const styles = StyleSheet.create({
-    container:{
-        backgroundColor:'#11b9f5',
-        flex:1,
-        justifyContent: "center",
-        alignItems: "center",        
-    },
-    containerForm:{
-        backgroundColor: '#fff',
-        borderTopLeftRadius: 25,
-        borderTopRightRadius: 25,
-        borderBottomLeftRadius: 25,
-        borderBottomRightRadius: 25,
-        padding: '5%',
-        width: '80%'
-    },
-    text:{
-        fontSize: 30,
-        marginBottom: 12,
-        alignSelf:'center'
-    },
-})
 
 export default Cadastro
