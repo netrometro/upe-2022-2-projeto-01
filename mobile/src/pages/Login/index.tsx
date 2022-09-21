@@ -12,6 +12,7 @@ function Login() {
 
   const entrar = () => {
     console.log("entrou");
+    navigation.navigate("Allgenda")
   };
 
   return (
