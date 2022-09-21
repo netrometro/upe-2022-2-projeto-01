@@ -1,14 +1,15 @@
 import { StyleSheet } from "react-native";
+import { THEME } from "../../themes";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#11b9f5",
+    backgroundColor: THEME.COLORS.BACKGROUND,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
   containerForm: {
-    backgroundColor: "#fff",
+    backgroundColor: THEME.COLORS.BACKGROUND_FORM,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     borderBottomLeftRadius: 25,
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
     width: "80%",
   },
   text: {
-    fontSize: 30,
+    fontSize: THEME.FONT_SIZE.LG,
     marginBottom: 12,
     alignSelf: "center",
   },

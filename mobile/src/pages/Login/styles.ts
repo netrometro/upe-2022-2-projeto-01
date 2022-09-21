@@ -1,29 +1,31 @@
 import { StyleSheet } from "react-native";
+import { THEME } from "../../themes";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#11b9f5",
+    backgroundColor: THEME.COLORS.BACKGROUND,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
   containerForm: {
-    backgroundColor: "#fff",
+    backgroundColor: THEME.COLORS.BACKGROUND_FORM,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
     padding: "5%",
     width: "80%",
+    marginBottom: 100,
   },
   text: {
-    fontSize: 30,
+    fontSize: THEME.FONT_SIZE.LG,
     marginBottom: 12,
     alignSelf: "center",
   },
   button: {
     position: "absolute",
-    backgroundColor: "#fff",
+    backgroundColor: THEME.COLORS.TEXT,
     borderRadius: 50,
     paddingVertical: 8,
     width: "60%",
@@ -32,7 +34,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: THEME.FONT_SIZE.MD,
     fontWeight: "bold",
   },
 });

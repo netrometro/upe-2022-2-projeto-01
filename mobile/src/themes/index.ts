@@ -1,7 +1,7 @@
 export const THEME = {
     COLORS: {
-      BACKGROUND_900: '#121214',
-      BACKGROUND_800: '#18181B',
+      BACKGROUND: '#11b9f5',
+      BACKGROUND_FORM: '#FFFFFF',
   
       TEXT: '#FFFFFF',
   
@@ -22,6 +22,7 @@ export const THEME = {
     FONT_SIZE: {
       SM: 14,
       MD: 16,
-      LG: 24
+      LG: 24,
+      SP_LG: 50
     }
   };
