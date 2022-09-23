@@ -4,6 +4,9 @@ import Inicio from "../pages/Inicio";
 import Cadastro from "../pages/Cadastro";
 import Login from "../pages/Login";
 import { Allgenda } from '../pages/Allgenda';
+import { Anuncio } from '../pages/Anuncio';
+import { Button} from '@rneui/base';
+import { THEME } from '../themes';
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
@@ -28,8 +31,20 @@ export function AppRoutes() {
                 component={Allgenda}
                 options={{
                     navigationBarHidden: true, 
-                    headerBackVisible: false
+                    headerBackVisible: false,
+                    headerRight: () => (
+                        <Button
+                          onPress={() => alert('Colocar rota de perfil')}
+                          color="#fff"
+                          icon= {{ type: "font-awesome", name: "user", color: "#000" }}
+                        />
+                      ),
                 }}
+                
+            />
+            <Screen
+                name='Anúncio'
+                component={Anuncio}
             />
         </Navigator>
     )

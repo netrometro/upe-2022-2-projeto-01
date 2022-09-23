@@ -3,7 +3,8 @@ export declare global{
         interface RootParamList {
             Cadastro: undefined,
             Login: undefined,
-            Allgenda: undefined
+            Allgenda: undefined,
+            Anúncio: undefined,
         }
     }
 }

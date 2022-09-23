@@ -22,8 +22,8 @@ export const styles = StyleSheet.create({
         borderBottomRightRadius: 25,
         padding: "5%",
         width: "80%",
-        height: "60%",
-        marginTop: "10%"
+        height: "75%",
+        top: "5%"
     },
     button: {
         position: "absolute",
@@ -32,8 +32,8 @@ export const styles = StyleSheet.create({
         paddingVertical: 8,
         width: "80%",
         alignSelf: "center",
-        bottom: "20%",
         alignItems: "center",
+        bottom: "10%"
       },
       buttonText: {
         fontSize: 18,
