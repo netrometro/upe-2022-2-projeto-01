@@ -5,6 +5,7 @@ export declare global{
             Login: undefined,
             Allgenda: undefined,
             Anúncio: undefined,
+            Perfil: undefined,
         }
     }
 }

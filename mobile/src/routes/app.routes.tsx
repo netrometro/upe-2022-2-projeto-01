@@ -7,6 +7,7 @@ import { Allgenda } from '../pages/Allgenda';
 import { Anuncio } from '../pages/Anuncio';
 import { Button} from '@rneui/base';
 import { THEME } from '../themes';
+import Perfil from '../pages/Perfil';
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
@@ -45,6 +46,10 @@ export function AppRoutes() {
             <Screen
                 name='Anúncio'
                 component={Anuncio}
+            />
+            <Screen
+                name='Perfil'
+                component={Perfil}
             />
         </Navigator>
     )
