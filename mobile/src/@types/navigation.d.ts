@@ -4,7 +4,7 @@ export declare global{
             Cadastro: undefined,
             Login: undefined,
             Allgenda: undefined,
-            Anúncio: undefined,
+            CadastrarEvento: undefined,
             Perfil: undefined,
         }
     }

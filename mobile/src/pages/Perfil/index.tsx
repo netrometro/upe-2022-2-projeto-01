@@ -1,14 +1,14 @@
 import React from "react";
 import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import logo from "../../assets/logo.png";
+// import logo from "../../assets/logo.png";
 export default function Perfil() {
     const navigation = useNavigation();
     
     return (
          <View style={styles.container}>
             <View style={styles.containerForm}>
-            <Image source={logo} style={{ width: 305, height: 159 }} />
+            {/* <Image source={logo} style={{ width: 305, height: 159 }} /> */}
                 <Text style={styles.title}>Nome do user</Text>
                 <Text style={styles.text}>
                     Descrição do usuario!

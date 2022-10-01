@@ -35,8 +35,12 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         bottom: "10%"
       },
-      buttonText: {
+    buttonText: {
         fontSize: 18,
         fontWeight: "bold",
-      },
+    },
+    contentList: {
+        paddingLeft: 32,
+        paddingRight: 64,
+    }
 })

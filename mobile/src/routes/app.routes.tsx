@@ -4,7 +4,7 @@ import Inicio from "../pages/Inicio";
 import Cadastro from "../pages/Cadastro";
 import Login from "../pages/Login";
 import { Allgenda } from '../pages/Allgenda';
-import { Anuncio } from '../pages/Anuncio';
+import { Evento } from '../pages/Evento';
 import { Button} from '@rneui/base';
 import { THEME } from '../themes';
 import Perfil from '../pages/Perfil';
@@ -44,8 +44,8 @@ export function AppRoutes() {
                 
             />
             <Screen
-                name='Anúncio'
-                component={Anuncio}
+                name='CadastrarEvento'
+                component={Evento}
             />
             <Screen
                 name='Perfil'
