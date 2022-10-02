@@ -24,10 +24,10 @@ export function EventoCard({ data, ...rest }: Props) {
     return (
       <TouchableOpacity style={styles.container} {...rest}>
         <View style={styles.cover}>
-            <Text style={styles.name}>{data.titulo}</Text>
-            <Text style={styles.name}>{data.descricao}</Text>
-            <Text style={styles.eventos}>{data.dataEvento}</Text>
-            <Text style={styles.name}>{data.tag}</Text>
+            <Text style={styles.title}>{data.titulo}</Text>
+            <Text style={styles.description}>{data.descricao}</Text>
+            <Text style={styles.description}>{data.dataEvento}</Text>
+            <Text style={styles.tag}>{data.tag}</Text>
         </View>
       </TouchableOpacity>
     );

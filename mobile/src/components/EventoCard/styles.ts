@@ -21,12 +21,19 @@ export const styles = StyleSheet.create({
     padding: 16,
     justifyContent: "flex-end",
   },
-  name: {
+  title: {
     color: "#000",
-    fontSize: THEME.FONT_SIZE.MD,
+    fontSize: THEME.FONT_SIZE.LG,
+    marginBottom: 10
   },
-  eventos: {
+  description: {
+    color: "#000",
+    fontSize: THEME.FONT_SIZE.SM,
+    marginBottom: 5
+  },
+  tag: {
     color: THEME.COLORS.CAPTION_300,
     fontSize: THEME.FONT_SIZE.MD,
+    marginBottom: 5
   },
 });
