@@ -18,7 +18,8 @@ export const userRegister = async (req:Request, res: Response) => {
         const result = await prisma.usuario.create({
             data: {
                 ...req.body,
-                senha: senhaHash
+                senha: senhaHash,
+                eventos: undefined
             }
         })
         return res.json(result)
