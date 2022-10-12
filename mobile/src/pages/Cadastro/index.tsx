@@ -19,23 +19,30 @@ function Cadastro() {
       <View style={styles.containerForm}>
         <Text style={styles.text}>Cadastrar</Text>
         <Input
-          placeholder="E-mail"
-          leftIcon={{ type: "font-awesome", name: "envelope" }}
+          placeholder="Nome"
+          leftIcon={{ type: "font-awesome", name: "user" }}
           onChangeText={(value) => setEmail(value)}
           keyboardType="email-address"
+        />
+
+        <Input
+          placeholder="Apelido"
+          leftIcon={{ type: "font-awesome", name: "user" }}
+          onChangeText={(value) => setEmail(value)}
+          keyboardType="email-address"
+        />
+
+        <Input
+            placeholder="E-mail"
+            leftIcon={{ type: "font-awesome", name: "envelope" }}
+            onChangeText={(value) => setEmail(value)}
+            keyboardType="email-address"
         />
 
         <Input
           placeholder="Sua senha"
           leftIcon={{ type: "font-awesome", name: "lock" }}
           onChangeText={(value) => setPassword(value)}
-          secureTextEntry={true}
-        />
-
-        <Input
-          placeholder="Repita sua senha"
-          leftIcon={{ type: "font-awesome", name: "lock" }}
-          onChangeText={(value) => setPasswordRepeated(value)}
           secureTextEntry={true}
         />
 
