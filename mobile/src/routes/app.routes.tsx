@@ -8,6 +8,7 @@ import { Evento } from '../pages/Evento';
 import { Button} from '@rneui/base';
 import { THEME } from '../themes';
 import Perfil from '../pages/Perfil';
+import Pesquisa from '../pages/Pesquisa';
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
@@ -51,6 +52,10 @@ export function AppRoutes() {
                 name='Perfil'
                 component={Perfil}
             />
+            <Screen
+                name='Pesquisa'
+                component={Pesquisa}
+            />    
         </Navigator>
     )
 }

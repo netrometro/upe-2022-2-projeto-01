@@ -19,22 +19,22 @@ export function NavBar() {
         </View>
         <View style={styles.NavContainer}>
           <View style={styles.NavBar}>
-            <Pressable onPress={() => navigation.navigate("Login")} style={styles.IconComportamento}
+            <Pressable onPress={() => navigation.navigate("Pesquisa")} style={styles.IconComportamento}
             android_ripple={{borderless:true, radius:50}}>
-              <Icon name="heart" style={styles.Icon} color='#448aff'/>
+              <Icon name="search" style={styles.Icon} color='#448aff'/>
             </Pressable>
 
-            <Pressable onPress={() => navigation.navigate("Login")} style={styles.IconComportamento}
+            <Pressable onPress={() => navigation.navigate("Allgenda")} style={styles.IconComportamento}
             android_ripple={{borderless:true, radius:50}}>
               <Icon name="home" style={styles.Icon} color='#448aff'/>
             </Pressable>
 
-            <Pressable onPress={() => navigation.navigate("Login")} style={styles.IconComportamento}
+            <Pressable onPress={() => navigation.navigate("CadastrarEvento")} style={styles.IconComportamento}
             android_ripple={{borderless:true, radius:50}}>
               <Icon name="albums" style={styles.Icon} color='#1e88e5'/>
             </Pressable>
 
-            <Pressable onPress={() => navigation.navigate("Login")} style={styles.IconComportamento}
+            <Pressable onPress={() => navigation.navigate("Perfil")} style={styles.IconComportamento}
             android_ripple={{borderless:true, radius:50}}>
               <Icon name="person" style={styles.Icon} color='#1565c0'/>
             </Pressable>
