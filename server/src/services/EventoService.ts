@@ -59,7 +59,7 @@ export const findEventoById = async (req: Request, res: Response) => {
 export const deleteEventoById = async (req: Request, res: Response) => {
     const deleteEvento = await prisma.evento.delete({
         where : {
-            id: req.body.id,
+            id: +req.params.id,
         }
     })
 
@@ -69,8 +69,8 @@ export const deleteEventoById = async (req: Request, res: Response) => {
         })
     }
 
-    console.log(deleteEvento)
-    return res.json(deleteEvento)
+    console.log("Apagado: ", deleteEvento)
+    return res.json()
 }
 
 export const findEventoByTag = async (req : Request, res : Response) => {

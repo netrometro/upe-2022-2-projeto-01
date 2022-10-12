@@ -8,7 +8,7 @@ EventoController.post('/evento', auth, async (req, res) => {
     createEvento(req, res)
 })
 
-EventoController.get('/eventos', auth, async (req, res) => {
+EventoController.get('/eventos', auth,  async (req, res) => {
     findAllEventos(res)
 })
 
@@ -20,7 +20,7 @@ EventoController.put('/evento/:id', auth, async (req, res) => {
     udpateEvento(req, res)
 })
 
-EventoController.delete('/eventos', auth, (req, res) => {
+EventoController.delete('/evento/:id', auth, (req, res) => {
     deleteEventoById(req, res)
 })
 
