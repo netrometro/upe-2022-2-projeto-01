@@ -7,6 +7,7 @@ export declare global{
             CadastrarEvento: undefined,
             Perfil: undefined,
             Pesquisa: undefined,
+            Ajuda: undefined
         }
     }
 }

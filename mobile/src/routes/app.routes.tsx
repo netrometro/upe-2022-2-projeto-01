@@ -1,48 +1,42 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { useNavigation } from "@react-navigation/native";
 
-import Inicio from "../pages/Inicio";
-import Cadastro from "../pages/Cadastro";
-import Login from "../pages/Login";
 import { Allgenda } from '../pages/Allgenda';
 import { Evento } from '../pages/Evento';
 import { Button} from '@rneui/base';
 import { THEME } from '../themes';
 import Perfil from '../pages/Perfil';
+import Ajuda from '../pages/Ajuda';
 import Pesquisa from '../pages/Pesquisa';
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
 export function AppRoutes() {
+    const navigation = useNavigation();
     return(
         <Navigator>
-            <Screen
-                name='Inicio'
-                component={Inicio}
-                options={{headerShown: false}}
-            />
-            <Screen
-                name='Cadastro'
-                component={Cadastro}
-            />
-            <Screen
-                name='Login'
-                component={Login}
-            />
-            <Screen
-                name='Allgenda'
-                component={Allgenda}
-                options={{
-                    navigationBarHidden: true, 
-                    headerBackVisible: false,
-                    headerRight: () => (
-                        <Button
-                          onPress={() => alert('Colocar rota de perfil')}
-                          color="#fff"
-                          icon= {{ type: "font-awesome", name: "user", color: "#000" }}
-                        />
-                      ),
-                }}
-                
+        <Screen
+            name='Allgenda'
+            component={Allgenda}
+            options={{
+                headerTitleAlign: 'center',
+                navigationBarHidden: true, 
+                headerBackVisible: false,
+                headerRight: () => (
+                    <Button
+                        onPress={() => alert('Colocar rota de perfil')}
+                        color="#fff"
+                        icon= {{ type: "font-awesome", name: "user", color: "#000" }}
+                    />       
+                ),
+                headerLeft: () => (
+                    <Button
+                        onPress={() => navigation.navigate("Ajuda")}
+                        color="#fff"
+                        icon= {{ type: "font-awesome", name: "question", color: "#000" }}
+                    />
+                )
+            }}  
             />
             <Screen
                 name='CadastrarEvento'
@@ -56,6 +50,10 @@ export function AppRoutes() {
                 name='Pesquisa'
                 component={Pesquisa}
             />    
+            <Screen
+                name='Ajuda'
+                component={Ajuda}
+            />
         </Navigator>
     )
 }
