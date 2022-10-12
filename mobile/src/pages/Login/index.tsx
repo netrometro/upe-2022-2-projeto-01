@@ -1,18 +1,21 @@
+import React, { useContext } from "react";
 import { Input, Button } from "@rneui/base";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
+import AuthContext from "../../contexts/auth";
 
 function Login() {
+  const { signed, signIn } = useContext(AuthContext);
+  console.log(signed)
   const navigation = useNavigation();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const entrar = () => {
-    console.log("entrou");
-    navigation.navigate("Allgenda")
+    signIn(email, password);
   };
 
   return (
