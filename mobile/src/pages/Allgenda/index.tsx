@@ -13,21 +13,30 @@ export function Allgenda() {
             {/* <View style={styles.ads}>
                 <Text style={styles.title}>Anúncios</Text>        
             </View> */}
-            <FlatList
-                data={EVENTOS}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
-                    <EventoCard data={item}/>
-                )}
-                showsHorizontalScrollIndicator={false}
-                horizontal
-                contentContainerStyle={styles.contentList}
-            >
+            <View style={styles.eventos}>
+                <FlatList
+                    data={EVENTOS}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => (
+                        <EventoCard data={item}/>
+                    )}
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={styles.contentList}
+                >
 
-            </FlatList>
+                </FlatList>
+            </View>
+            
 
             <TouchableOpacity 
-                style={styles.button}
+                style={styles.buttonEntrar}
+                // onPress={() => navigation.navigate("ROTA")}
+            >
+                <Text style={styles.buttonText}> Entrar em evento</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+                style={styles.buttonCadastrar}
                 onPress={() => navigation.navigate("CadastrarEvento")}
             >
                 <Text style={styles.buttonText}> Cadastrar Evento</Text>

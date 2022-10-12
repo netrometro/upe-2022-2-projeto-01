@@ -25,7 +25,17 @@ export const styles = StyleSheet.create({
         height: "75%",
         top: "5%"
     },
-    button: {
+    buttonEntrar: {
+        position: "absolute",
+        backgroundColor: THEME.COLORS.BACKGROUND_FORM,
+        borderRadius: 50,
+        paddingVertical: 8,
+        width: "80%",
+        alignSelf: "center",
+        alignItems: "center",
+        bottom: "18%"
+    },
+    buttonCadastrar: {
         position: "absolute",
         backgroundColor: THEME.COLORS.BACKGROUND_FORM,
         borderRadius: 50,
@@ -34,13 +44,17 @@ export const styles = StyleSheet.create({
         alignSelf: "center",
         alignItems: "center",
         bottom: "10%"
-      },
+    },
     buttonText: {
         fontSize: 18,
         fontWeight: "bold",
     },
+    eventos: {
+        marginTop: 20,
+        height: "60%",
+        marginLeft: 18
+    },
     contentList: {
-        paddingLeft: 32,
-        paddingRight: 64,
+        //mexer no evento
     }
 })
