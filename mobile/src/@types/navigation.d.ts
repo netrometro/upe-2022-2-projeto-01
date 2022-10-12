@@ -6,6 +6,7 @@ export declare global{
             Allgenda: undefined,
             CadastrarEvento: undefined,
             Perfil: undefined,
+            Ajuda: undefined
         }
     }
 }
