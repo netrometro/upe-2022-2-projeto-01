@@ -39,6 +39,16 @@ export const findAllEventos = async (res: Response) => {
     return res.json(eventos)
 }
 
+export const findEventosByUserId = async (req: Request, res: Response) => {
+    const usuarioReqId = +req.params.id
+    const eventos = await prisma.evento.findMany()
+
+    const filterEventos = eventos.filter(evento => evento.usuarioId == usuarioReqId)
+
+    console.log(filterEventos)
+    return res.json(filterEventos)
+}
+
 export const findEventoById = async (req: Request, res: Response) => {
     const evento = await prisma.evento.findUnique({
         where : { 
@@ -59,7 +69,7 @@ export const findEventoById = async (req: Request, res: Response) => {
 export const deleteEventoById = async (req: Request, res: Response) => {
     const deleteEvento = await prisma.evento.delete({
         where : {
-            id: req.body.id,
+            id: +req.params.id,
         }
     })
 
@@ -69,8 +79,8 @@ export const deleteEventoById = async (req: Request, res: Response) => {
         })
     }
 
-    console.log(deleteEvento)
-    return res.json(deleteEvento)
+    console.log("Apagado: ", deleteEvento)
+    return res.json()
 }
 
 export const findEventoByTag = async (req : Request, res : Response) => {
