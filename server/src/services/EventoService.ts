@@ -39,6 +39,16 @@ export const findAllEventos = async (res: Response) => {
     return res.json(eventos)
 }
 
+export const findEventosByUserId = async (req: Request, res: Response) => {
+    const usuarioReqId = +req.params.id
+    const eventos = await prisma.evento.findMany()
+
+    const filterEventos = eventos.filter(evento => evento.usuarioId == usuarioReqId)
+
+    console.log(filterEventos)
+    return res.json(filterEventos)
+}
+
 export const findEventoById = async (req: Request, res: Response) => {
     const evento = await prisma.evento.findUnique({
         where : { 
