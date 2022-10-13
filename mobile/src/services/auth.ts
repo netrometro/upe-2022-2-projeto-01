@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from "./api";
 
 interface Response {
   id: number,
@@ -17,7 +17,7 @@ export async function signIn(email: String, senha: String): Promise<Response> {
   
   console.log(response)
   return response */
-  const response = await axios.post('http://192.168.18.96:3333/api/login', {
+    const response = await api.post('/login', {
     email: email,
     senha: senha
   })

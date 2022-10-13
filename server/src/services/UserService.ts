@@ -5,11 +5,11 @@ import * as jwt from "jsonwebtoken";
 
 const prisma = new PrismaClient()
 
-export const userRegister = async (req:Request, res: Response) => {
+export const userRegister = async (req: Request, res: Response) => {
     const usuario = await prisma.usuario.findUnique({
         where: {
             email: req.body.email
-        }
+        },
     })
       
     if(!usuario){
@@ -18,6 +18,7 @@ export const userRegister = async (req:Request, res: Response) => {
         const result = await prisma.usuario.create({
             data: {
                 ...req.body,
+                email: req.body.email.toLowerCase(),
                 senha: senhaHash,
                 eventos: undefined
             }
@@ -82,7 +83,7 @@ export const login = async (req:Request, res: Response) => {
 
     const usuario = await prisma.usuario.findUnique({
         where: {
-            email: req.body.email
+            email: (req.body.email).toLowerCase()
         }
     })
 
