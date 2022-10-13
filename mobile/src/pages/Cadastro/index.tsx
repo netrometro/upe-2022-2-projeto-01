@@ -3,21 +3,25 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { useState } from "react";
 import { styles } from "./styles";
 import { View, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import api from "../../services/api";
 
 function Cadastro() {
+  const navigation = useNavigation();
   const [email, setEmail] = useState<string>("");
+  const [nome, setNome] = useState<string>("");
+  const [apelido, setApelido] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [passwordRepeated, setPasswordRepeated] = useState<string>("");
 
   function handleCreateUser() {
     api.post("/register", {
-        nome: "Gabriel Rodrigues",
+        nome: nome,
         email: email,
         senha: password,
-        apelido: "teste",
-        avatar: "https://avatars2.githubusercontent.com/u/589998?s=460&v=4"
+        apelido: apelido,
+        avatar: ""
     })
+    navigation.navigate("Login")
   }
 
   return (
@@ -27,14 +31,14 @@ function Cadastro() {
         <Input
           placeholder="Nome"
           leftIcon={{ type: "font-awesome", name: "user" }}
-          onChangeText={(value) => setEmail(value)}
+          onChangeText={(value) => setNome(value)}
           keyboardType="email-address"
         />
 
         <Input
           placeholder="Apelido"
           leftIcon={{ type: "font-awesome", name: "user" }}
-          onChangeText={(value) => setEmail(value)}
+          onChangeText={(value) => setApelido(value)}
           keyboardType="email-address"
         />
 
