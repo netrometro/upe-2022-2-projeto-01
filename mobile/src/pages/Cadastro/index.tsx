@@ -3,6 +3,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { useState } from "react";
 import { styles } from "./styles";
 import { View, Text } from "react-native";
+import api from "../../services/api";
 
 function Cadastro() {
   const [email, setEmail] = useState<string>("");
@@ -10,8 +11,13 @@ function Cadastro() {
   const [passwordRepeated, setPasswordRepeated] = useState<string>("");
 
   function handleCreateUser() {
-    console.log(email);
-    console.log(password);
+    api.post("/register", {
+        nome: "Gabriel Rodrigues",
+        email: email,
+        senha: password,
+        apelido: "teste",
+        avatar: "https://avatars2.githubusercontent.com/u/589998?s=460&v=4"
+    })
   }
 
   return (
