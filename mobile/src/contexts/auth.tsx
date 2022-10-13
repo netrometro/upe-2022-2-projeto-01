@@ -17,8 +17,8 @@ export const AuthProvider : React.FC = (({children}) => {
     const response =  await auth.signIn(email, password);
     
     response.token ? setUser(response) : console.log("Usuário não existe");
-    
-    
+    api.defaults.headers.common['Authorization'] = `Bearer ${response.token}`;
+
   }
 
   return(
