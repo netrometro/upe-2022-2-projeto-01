@@ -4,6 +4,7 @@ import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { EVENTOS } from "../../utils/eventos";
 import { EventoCard } from "../../components/EventoCard";
+import { NavBar } from "../../components/Navbar/Navbar";
 
 export function Allgenda() {
     const navigation = useNavigation();
@@ -41,6 +42,7 @@ export function Allgenda() {
             >
                 <Text style={styles.buttonText}> Cadastrar Evento</Text>
             </TouchableOpacity>
+            <NavBar/>
         </View>
     )
 }

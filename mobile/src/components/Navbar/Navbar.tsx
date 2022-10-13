@@ -39,6 +39,11 @@ export function NavBar() {
               <Icon name="person" style={styles.Icon} color='#1565c0'/>
             </Pressable>
 
+            <Pressable onPress={() => navigation.navigate("Ajuda")} style={styles.IconComportamento}
+            android_ripple={{borderless:true, radius:50}}>
+              <Icon name="help" style={styles.Icon} color='#1565c0'/>
+            </Pressable>
+
           </View>
 
         </View>

@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { Input, Button} from "@rneui/base";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { styles } from "./styles";
+import { NavBar } from "../../components/Navbar/Navbar";
 
 export function Evento() {
     return(
@@ -45,6 +46,7 @@ export function Evento() {
                     // onPress={() => handleCreateEvento()}
                 />
             </View>
+            <NavBar/>
         </View>
     )
 }

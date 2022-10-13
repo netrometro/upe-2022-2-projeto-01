@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { NavBar } from "../../components/Navbar/Navbar";
 import { styles } from "./styles";
 
 export default function () {
@@ -16,6 +17,7 @@ export default function () {
         visualizar a lista de eventos que você está cadastrado.
       </Text>
       <Text style={styles.allgenda}>Allgenda🗓️</Text>
+      <NavBar/>
     </View>
   );
 }
