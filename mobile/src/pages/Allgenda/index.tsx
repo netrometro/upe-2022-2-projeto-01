@@ -5,10 +5,17 @@ import { useNavigation } from "@react-navigation/native";
 import { EVENTOS } from "../../utils/eventos";
 import { EventoCard } from "../../components/EventoCard";
 import { NavBar } from "../../components/Navbar/Navbar";
+import { useEffect, useState } from "react";
+import api from "../../services/api";
 
 export function Allgenda() {
+    const [eventos, setEventos] = useState([]);
     const navigation = useNavigation();
-
+    useEffect(() => {
+        api.get("/eventos").then((response) => {
+            setEventos(response.data);
+        })
+    })
     return (
         <View style={styles.container}>
             {/* <View style={styles.ads}>
@@ -16,8 +23,7 @@ export function Allgenda() {
             </View> */}
             <View style={styles.eventos}>
                 <FlatList
-                    data={EVENTOS}
-                    keyExtractor={(item) => item.id}
+                    data={eventos}
                     renderItem={({ item }) => (
                         <EventoCard data={item}/>
                     )}
