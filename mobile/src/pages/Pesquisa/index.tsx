@@ -40,7 +40,7 @@ export default function Pesquisa() {
     const [text, onChangeText] = React.useState('');
     const [usersFiltered, setUsersFiltered] = useState<object[]>([]);
     const filteredUsers = () => {
-        const _userdFiltered = USERS.filter((user) => user.email===text);
+        const _userdFiltered = USERS.filter((user) => user.apelido===text);
         console.log(_userdFiltered);
         setUsersFiltered(_userdFiltered);
     }
@@ -62,7 +62,7 @@ export default function Pesquisa() {
             <View style={styles.containerForm}>
             {usersFiltered.map((user:any) => (
                 <Fragment key={user.id}>
-                <Text style={styles.text}>email: {user.email}</Text>
+                <Text style={styles.text}>apelido: {user.apelido}</Text>
                 <Text style={styles.text}>nome: {user.nome}</Text>
                 </Fragment>
             ))}
@@ -71,7 +71,7 @@ export default function Pesquisa() {
             <View style={styles.containerForm}>
             {USERS.map((user) => (
                 <Fragment key={user.id}>
-                <Text style={styles.text}>email: {user.email}</Text>
+                <Text style={styles.text}>apelido: {user.apelido}</Text>
                 <Text style={styles.text}>nome: {user.nome}</Text>
                 </Fragment>
             ))}
